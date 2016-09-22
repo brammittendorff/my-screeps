@@ -144,12 +144,7 @@ Object.assign(component, {
         // create <amount> bigger upgraders
         amount = 5;
         if (rMemory.upgraders < amount) {
-          if (room.energyCapacityAvailable >= 1300) {
-            if (room.energyAvailable < 1300) {
-              return;
-            }
-            bp = global.templates._1300upgrader;
-          } else if (room.energyCapacityAvailable >= 800) {
+          if (room.energyCapacityAvailable >= 800) {
             if (room.energyAvailable < 800) {
               return;
             }

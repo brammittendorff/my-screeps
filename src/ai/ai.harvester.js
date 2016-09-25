@@ -81,7 +81,7 @@ Object.assign(component, {
         if (creep.carry.energy != 0) {
           // what was i doing exactly?
           if (!cMemory.buildMode) {
-            cMemory.buildMode = creep.memory.buildMode = _.random(1, 2); // 1 = build, 2 = repair
+            cMemory.buildMode = creep.memory.buildMode = _.random(1, 1); // 1 = build, 2 = repair
             switch (cMemory.buildMode) {
             case 1:
               creep.say('Build!');

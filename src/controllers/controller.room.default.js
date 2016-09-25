@@ -142,7 +142,7 @@ Object.assign(component, {
         }
 
         // create <amount> bigger upgraders
-        amount = 5;
+        amount = 4;
         if (rMemory.upgraders < amount) {
           if (room.energyCapacityAvailable >= 800) {
             if (room.energyAvailable < 800) {

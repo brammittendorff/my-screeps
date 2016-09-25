@@ -1,22 +1,21 @@
 Object.assign(component, {
 
-  _800upgrader: {
+  harvesterStationary: {
 
     body: [
       MOVE,
-      MOVE,
-      WORK,
-      WORK,
       WORK,
       WORK,
       WORK,
       WORK,
       CARRY,
+      CARRY,
       CARRY
     ],
-    name: 'upgrader' + _.random(1000, 1999),
+    name: 'harvester' + _.random(1000, 1999),
     memory: {
-      role: 'upgrader',
+      role: 'harvester',
+      subrole: 'stationairy',
       targetResourceId: null,
     },
 

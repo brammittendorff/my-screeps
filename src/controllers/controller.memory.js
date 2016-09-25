@@ -83,9 +83,12 @@ Object.assign(component, {
       rMemory.version = global.config.version;
       rMemory.sources = {};
 
-      // set resources
+      // set sources
       _.forEach(room.find(FIND_SOURCES), (source) => {
-        rMemory.sources[source.id] = source;
+        rMemory.sources[source.id]            = source;
+        rMemory.sources[source.id].spots      = global.go.resource.findMiningSpots(source);
+        rMemory.sources[source.id].spotsCount = _(rMemory.sources[source.id].spots).size();
+        // todo: remove room, ticksToRegenerate, energy from memory
       });
 
     }

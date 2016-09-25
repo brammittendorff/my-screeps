@@ -1,5 +1,5 @@
 Object.assign(component, {
 
-  version: 2
+  version: 4
 
 });

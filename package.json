@@ -6,6 +6,7 @@
   "dependencies": {
     "bower": "^1.7.9",
     "eslint": "^3.5.0",
+    "eslint-config-screeps": "^1.0.0",
     "grunt": "^1.0.1",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0",

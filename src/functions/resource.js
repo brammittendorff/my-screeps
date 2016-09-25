@@ -32,6 +32,21 @@ Object.assign(component, {
       return source.id;
     },
 
+    findMiningSpots: function (entity) {
+      let pos = entity.pos;
+      let miningSpace = [];
+      for (let x = -1; x <= 1; x++) {
+        for (let y = -1; y <= 1; y++) {
+          let position = entity.room.getPositionAt(pos.x + x, pos.y + y);
+          let terrain = position.lookFor(LOOK_TERRAIN)[0];
+          if ( terrain == 'plain' || terrain == 'swamp' ) {
+            miningSpace.push(position);
+          }
+        }
+      }
+      return miningSpace;
+    }
+
   }
 
 });

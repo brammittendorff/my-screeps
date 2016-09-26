@@ -2,7 +2,7 @@ Object.assign(component, {
 
   upgrader: {
 
-    task: function (creep) {
+    routine: function (creep) {
 
       var cMemory = creep.memory;
 

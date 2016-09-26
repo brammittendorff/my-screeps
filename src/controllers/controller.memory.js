@@ -3,12 +3,21 @@ Object.assign(component, {
   memory: {
 
     updateByCreep: function (creep) {
+
+      // vars
+      var cMemory = creep.memory;
       // initialize once
-      if( !creep.memory.version || creep.memory.version < global.config.version ) {
+      if( !cMemory.version || cMemory.version < global.config.version ) {
         this.initCreep(creep);
       }
 
       // update memory for this creep
+      // 1 minute
+      if( (Game.time & 0x1A) == 0) {
+        if(creep.ticksToLive < 180) {
+          cMemory.iAmOld = true;
+        }
+      }
     },
 
     initCreep: function (creep) {
@@ -81,14 +90,15 @@ Object.assign(component, {
 
       // set config
       rMemory.version = global.config.version;
+      rMemory.taskQueue = [];
       rMemory.sources = {};
 
-      // set sources
       _.forEach(room.find(FIND_SOURCES), (source) => {
-        rMemory.sources[source.id]            = source;
-        rMemory.sources[source.id].spots      = global.go.resource.findMiningSpots(source);
-        rMemory.sources[source.id].spotsCount = _(rMemory.sources[source.id].spots).size();
-        // todo: remove room, ticksToRegenerate, energy from memory
+        let sMemory = rMemory.sources[source.id] = source;
+        sMemory.spots      = global.go.resource.findMiningSpots(source);
+        sMemory.spotsCount = _(rMemory.sources[source.id].spots).size();
+        sMemory.spotTakers = [];
+        delete sMemory.room;
       });
 
     }

@@ -2,7 +2,7 @@ Object.assign(component, {
 
   harvester: {
 
-    task: function (creep) {
+    routine: function (creep) {
 
       //vars
       var cMemory = creep.memory;

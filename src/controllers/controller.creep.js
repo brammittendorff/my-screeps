@@ -13,7 +13,7 @@ Object.assign(component, {
 
       // task creep by their role
       if (global.ai[cMemory.role]) {
-        global.ai[cMemory.role].task(creep);
+        global.ai[cMemory.role].routine(creep);
       }
 
     }

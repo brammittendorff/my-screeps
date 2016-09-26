@@ -1,7 +1,8 @@
 Object.assign(component, {
 
   archer: {
-    task: function (creep) {
+
+    routine: function (creep) {
 
       return creep;
 
